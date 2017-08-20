@@ -1,0 +1,48 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+
+public class Solution {
+public static List<Integer> l = new ArrayList<Integer>();
+    
+static{
+     for(int i=999 ; i >99 ; i--){
+                for(int j=999 ; j >99 ; j--){
+                    
+                    String current = (i*j)+"";
+                    StringBuilder reverseStr = new StringBuilder(current);
+                    reverseStr = reverseStr.reverse();
+                    String reverseCurrent = new String(reverseStr);
+                    if(current.equalsIgnoreCase(reverseCurrent)){
+                        //System.out.println("i is  : "+ i + " j is : "+j);
+                        l.add(Integer.parseInt(current));
+                    }
+                    
+                        
+                    }
+                }
+            Collections.sort(l);
+            Collections.reverse(l);
+}
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int t = in.nextInt();
+        
+        for(int a0 = 0; a0 < t; a0++){
+            int n = in.nextInt();
+           
+          // int min= 0;
+            for(int p = 0 ; p< l.size();p++){
+                if(l.get(p)<n ){
+                    System.out.println(l.get(p));
+                    break;
+                }
+            }
+            }
+        //System.out.println(l);
+        }
+    }
+
